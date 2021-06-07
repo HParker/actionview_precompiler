@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 70470d7eed2086169881cc3328693a0f014b03f8
+  revision: bbbc861f717689a0a28f031fe2176d0f8a6b07c7
   branch: main
   specs:
     actioncable (7.0.0.alpha)
@@ -160,6 +160,7 @@ GEM
 PLATFORMS
   java
   ruby
+  universal-java-11
 
 DEPENDENCIES
   actionview_precompiler!
@@ -170,4 +171,4 @@ DEPENDENCIES
   rake (~> 12.0)
 
 BUNDLED WITH
-   2.2.3
+   2.2.16

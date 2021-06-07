@@ -30,6 +30,17 @@ module ActionviewPrecompiler
       assert_equal [:user], renders[0].locals_keys
     end
 
+    def test_parsing_template_implicit_path
+      template = parse_template("users/index.html.erb")
+      assert_equal "index.html.erb", template.basename
+      assert_kind_of ActionView::Template::Handlers::ERB, template.handler
+
+      renders =  template.render_calls
+      assert_equal 1, renders.length
+      assert_equal ["users/show"], renders.map(&:virtual_path)
+      # assert_equal [[:user], [:bar], [:bar]], renders.map(&:locals_keys)
+    end
+
     private
 
     def parse_template(filename)
